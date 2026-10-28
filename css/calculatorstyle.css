@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+}
+
+.calculator {
+    border: 1px solid #717377;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: transparent;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+}
+
+input {
+    width: 320px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 24px;
+    border: 2px solid #717377;
+    border-radius: 12px;
+    background: transparent;
+    box-shadow: 0 3px 15px rgba(84, 84, 84, 0.1);
+    font: inherit;
+    font-size: 40px;
+    text-align: right;
+    color: #ffffff;
+    cursor: default;
+    caret-color: transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus{
+    outline: none;
+    border-color: #fb7c14;
+    box-shadow: 0 0 12px rgba(251, 124, 20, 0.4);
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),
+                 8px  8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease,
+                background-color 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+button:hover{
+    background-color: #717377;
+    transform: translateY(-3px) scale(1.08);
+}
+
+button:active {
+    transform: scale(0.92);
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.1),
+                inset  4px  4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:focus-visible {
+    outline: 2px solid #6dee0a;
+    outline-offset: 2px;
+}
+
+.operator {
+    color: #6dee0a;
+}
+
+.equal-btn {
+    background-color: #fb7c14;
+    color: #1a1a1a;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.equal-btn:hover {
+    background-color: #ff9540;
+    animation-play-state: paused;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(251, 124, 20, 0.6); }
+    50%      { box-shadow: 0 0 0 12px rgba(251, 124, 20, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
